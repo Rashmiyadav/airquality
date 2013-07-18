@@ -1,0 +1,18 @@
+<?php
+//echo $at=$_POST['CITY'];
+$detail=$_POST['CITY'];
+ session_start();
+ $yr = $_SESSION['sessionVar'];
+  echo "$yr"."<br>";
+include('connection.php');
+$q=mysql_query("SELECT * FROM air8910 WHERE CITY='$detail' and YEAR='$yr'");
+while($row=mysql_fetch_array($q))
+{
+	echo "SO2   :  ".$b=$row['SO2']."<br>";
+	echo "NO2   :  ".$b=$row['NO2']."<br>";
+	echo "RSPM  :  ".$b=$row['RSPM']."<br>";
+
+
+}
+?>
+

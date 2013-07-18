@@ -1,0 +1,32 @@
+<?php
+include('connection.php');
+$detail=$_POST['CITY'];
+$detail2=$_POST['CIT'];
+session_start();
+$yr=$_SESSION['t'];
+
+$q = mysql_query("SELECT * FROM air8910 WHERE CITY='$detail'and YEAR='$yr'");
+while($row=mysql_fetch_array($q))
+{
+	echo "City Name  : ".$b=$row['CITY']."<br>";
+	echo "SO2   :  ".$b=$row['SO2']."<br>";
+	echo "NO2   :  ".$b=$row['NO2']."<br>";
+	echo "RSPM  :  ".$b=$row['RSPM']."<br>";
+
+
+}
+
+echo "<br>";
+echo "<br>";
+$s = mysql_query("SELECT * FROM air8910 WHERE CITY='$detail2'and YEAR='$yr'");
+while($row=mysql_fetch_array($s))
+{
+	echo "City Name  : ".$b=$row['CITY']."<br>";
+	echo "SO2   :  ".$b=$row['SO2']."<br>";
+	echo "NO2   :  ".$b=$row['NO2']."<br>";
+	echo "RSPM  :  ".$b=$row['RSPM']."<br>";
+
+
+}
+?>
+
